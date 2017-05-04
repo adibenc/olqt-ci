@@ -1,0 +1,34 @@
+File yang diubah atau dibuat :
+1. /application/config/config.php
+	- $config['base_url'] = 'http://localhost/ci-crud';
+	- penambahan .htaccess
+	- $config['index_page'] = '';
+	- $config['global_xss_filtering'] = TRUE;
+	
+2. Menambahkan .htaccess di folder / untuk menghilangkan index.php
+	
+3. /application/config/database.php
+	- koneksi hostname, username, password, port database dengan driver default mysqli
+	- contoh setting driver pdo di /application/config/database-pdo.php
+
+4. /application/config/routes.php
+	- $route['default_controller'] = 'login';
+	
+5. /application/config/autoload.php
+	- $autoload['libraries'] = array('database','session');
+	- $autoload['helper'] = array('url','form');
+	
+6. /application/controllers/Login.php
+
+7. /application/models/M_login.php
+
+8. /application/views/v_login.php
+
+9. /application/controllers/Aplikasi.php
+
+10. /application/models/M_aplikasi.php
+
+11. /application/views/v_aplikasi.php
+
+12. Menambahkan folder assets untuk bootstrap
+
