@@ -4,7 +4,7 @@
   updates:
    - nambah library soal.php
 */
-
+//tes
   class Tesc extends CI_Controller{
 
     public function __construct(){
