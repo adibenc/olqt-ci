@@ -4,7 +4,7 @@
   21/4/2017
   - bootstrap tampilan umum
 */
-  if($this->session->userdata('user')&&$this->session->userdata('pass')){
+  if($this->session->userdata('username')&&$this->session->userdata('password')){
 ?>
 <h1><?php  echo $this->session->userdata('user');?></h1>
 <div class="row">
