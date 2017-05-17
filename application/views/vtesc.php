@@ -1,11 +1,11 @@
 <h1>Coba Tes</h1>
-
+<div class="hg-6">
 <?php
 if($page=='Coba Tes'){
  ?>
- <?php echo "benar = ".$qbenar; echo " salah = ".$qsalah;?>
- <div class="row">
-   <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+ <?php //echo "benar = ".$qbenar; echo " salah = ".$qsalah;?>
+ <div class="row" style="height:100%">
+   <div class="col-lg-12 col-md-12 col-sm-12 text-center hg-6">
      <a href="<?php echo base_url('tesc/next/1')?>"><span class="w3-center w3-jumbo glyphicon glyphicon-play"><h2>Mulai Tes </h2></span></a>
    </div>
  </div>
@@ -70,6 +70,7 @@ if($page=='Coba Tes'){
     echo "jawabanmu = ".$vjawaban."<br>";
     echo "jawaban = ".$jawaban."<br>";
   ?>
+</div>
 <?php }else if($page=='Nilai'){
 ?>
   <div class="row text-center">
@@ -77,3 +78,4 @@ if($page=='Coba Tes'){
   <?php echo "benar = ".$qbenar; echo " salah = ".$qsalah."<br> Nilai ->".$nilai;?>
   </div>
 <?php }?>
+</div>

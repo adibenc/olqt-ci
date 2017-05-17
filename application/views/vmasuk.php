@@ -4,9 +4,9 @@
 	-5/11/2017
 */
 ?>
-<h1>Halaman Masuk</h1>
 <?php echo form_open('masuk/cekmasuk','name="login" '); ?>
-	<div class="container">
+	<div class="container hg-6">
+	<h1 class="col-md-offset-4">Halaman Masuk</h1>
 	<div class="col-md-4 col-md-offset-4 panel panel-default" style="border:none; background-color: rgba(0,0,0,0.09);">
 		<div class="panel-body">
 			<form role="form">

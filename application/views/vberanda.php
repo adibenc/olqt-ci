@@ -11,22 +11,25 @@
 ?>
 <h1>Beranda login</h1>
 <?php  echo "Selamat datang user ".$this->session->userdata('user');?><br>
-<div class="row">
+<div class="row hg-row">
   <div class="col-lg-12 col-md-12 col-sm-12 text-center">
     <a href="tes"><span class="w3-center w3-jumbo glyphicon glyphicon-play"><h2>Mulai Tes </h2></span></a>
   </div>
 </div>
 <!-- Tes Terakhir - Tips - Statistik Tes -->
 <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="col-lg-4 col-md-4 col-sm-4" id="testerakhir">
     <h3>Tes Terakhir</h3>
+    <p>
+      testerakhir testerakhirtesterakhirtesterakhirtesterakhirtesterakhir
+    </p>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="col-lg-4 col-md-4 col-sm-4" id="tips">
     <h3>Tips</h3>
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-4 col-md-4 col-sm-4">
+  <div class="col-lg-4 col-md-4 col-sm-4" id="statistik">
   <h3>Statistik Tes </h3>
   </div>
 </div>
@@ -34,6 +37,8 @@
   }else{
 ?><!--
 <h1>Beranda normal</h1> -->
+<header>
+</header>
 <body style="background-color: #00aa44;">
   <div class="jumbotron text-center hg-about">
     <div class="">
@@ -79,6 +84,7 @@
     <h3>- comingsoon -</h3>
     </div>
   </div>
+</body>
 <?php
 
   }

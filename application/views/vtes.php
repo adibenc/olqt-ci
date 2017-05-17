@@ -2,35 +2,55 @@
 
 if($page=='Ketentuan Tes'){
  ?>
+<h3>Ketentuan Tes</h3>
 <div class="row">
-  <h3>Ketentuan Tes</h3>
   <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4" style="background-color:#00aa44;">
-    <?=form_open('tes/next/1','class="form"')?>
-    <?php echo $page; ?>
-      <h3>Juz</h3>
-      <select class="form-group" name="juz">
-        <option value="option">1</option>
-        <option value="option">2</option>
-        <option value="option">3</option>
-      </select>
-      <h3>Surat</h3>
-      <select class="" name="surat">
-        <option value="option">1</option>
-        <option value="option">2</option>
-        <option value="option">3</option>
-      </select>
-      <h3>Ayat</h3>
-      <select class="" name="ayat">
-        <option value="option">1</option>
-        <option value="option">2</option>
-        <option value="option">3</option>
-      </select>
-      <h3>Jumlah Soal</h3>
-      <select class="" name="soal">
-        <option value="option">10</option>
-        <option value="option">20</option>
-      </select>
-      <input type="submit" name="name" value="Mulai Tes">
+    <?=form_open('tes/next/1','class="form-horizontal" style="margin:20px"')?>
+    <?php //echo $page; ?>
+      <div class="form-group">
+      <label class="control-label col-sm-3">Juz</label>
+        <div class="col-sm-9">
+        <select class="form-control" name="juz">
+          <option value="option">1</option>
+          <option value="option">2</option>
+          <option value="option">3</option>
+        </select>
+        </div>
+    </div>
+      <div class="form-group">
+      <label class="control-label col-sm-3">Surat</label>
+      <div class="col-sm-9">
+        <select class="form-control" name="surat">
+          <option value="option">1</option>
+          <option value="option">2</option>
+          <option value="option">3</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-3">Ayat</label>
+        <div class="col-sm-9">
+        <select class="form-control" name="ayat">
+          <option value="option">1</option>
+          <option value="option">2</option>
+          <option value="option">3</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group">
+      <label class="control-label col-sm-3">Jumlah Soal</label>
+        <div class="col-sm-9">
+          <select class="form-control" name="soal">
+            <option value="option">10</option>
+            <option value="option">20</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-9 col-sm-3">
+          <input type="submit" name="name" value="Mulai Tes">
+        </div>
+      </div>
     </form>
   </div>
 </div>
