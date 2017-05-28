@@ -1,0 +1,61 @@
+update quran set juz=1 where SuraID <=3 and VerseID<142
+update quran set juz=2 where SuraID =2 and VerseID>=142 and VerseID<253
+update quran set juz=3 where SuraID = and VerseID>=253 and VerseID<253
+
+
+juz 3
+select * from quran where SuraID=2 and VerseID=253
+select id,ayat from quran where SuraID=3 and VerseID=93;386
+select id,ayat from quran where SuraID=4 and VerseID=24;517
+6
+select id,ayat from quran where SuraID=4 and VerseID=148;641
+select id,ayat from quran where SuraID=5 and VerseID=82;751
+select id,ayat from quran where SuraID=6 and VerseID=111;900
+select id,ayat from quran where SuraID=7 and VerseID=88;1042
+select id,ayat from quran where SuraID=8 and VerseID=41;1201
+11
+select id,ayat from quran where SuraID=9 and VerseID=93;1328
+select id,ayat from quran where SuraID=11 and VerseID=6;1479
+select id,ayat from quran where SuraID=12 and VerseID=53;1649
+select id,ayat from quran where SuraID=15 and VerseID=1;1803
+select id,ayat from quran where SuraID=17 and VerseID=1;2030
+16
+select id,ayat from quran where SuraID=18 and VerseID=75;2215
+select id,ayat from quran where SuraID=21 and VerseID=1;2484
+select id,ayat from quran where SuraID=23 and VerseID=18;2691
+select id,ayat from quran where SuraID=25 and VerseID=21;2876
+select id,ayat from quran where SuraID=27 and VerseID=56
+or SuraID=29 and VerseID=46
+or SuraID=33 and VerseID=31
+or SuraID=36 and VerseID=28
+or SuraID=39 and VerseID=32
+or SuraID=41 and VerseID=47
+or SuraID=46 and VerseID=1
+or SuraID=51 and VerseID=31
+or SuraID=58 and VerseID=1
+or SuraID=67 and VerseID=1
+or SuraID=78 and VerseID=1;
+21
+select id,ayat from quran where SuraID=29 and VerseID=46
+or SuraID=33 and VerseID=31
+or SuraID=36 and VerseID=28
+or SuraID=39 and VerseID=32
+or SuraID=41 and VerseID=47;
+26
+select id,ayat from quran where SuraID=46 and VerseID=1
+or SuraID=51 and VerseID=31
+or SuraID=58 and VerseID=1
+or SuraID=67 and VerseID=1
+or SuraID=78 and VerseID=1;
+
+select id,ayat from quran where SuraID=27 and VerseID=56 20 3215
+or SuraID=29 and VerseID=46 21 3386
+or SuraID=33 and VerseID=31 22 3564
+or SuraID=36 and VerseID=28 23 3733
+or SuraID=39 and VerseID=32 24 4090
+or SuraID=41 and VerseID=47 25 4265
+or SuraID=46 and VerseID=1 26 4511
+or SuraID=51 and VerseID=31 27 4706
+or SuraID=58 and VerseID=1 28 5105
+or SuraID=67 and VerseID=1 29 5242
+or SuraID=78 and VerseID=1; 30 5673

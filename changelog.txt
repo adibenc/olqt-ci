@@ -22,3 +22,7 @@ ctrl Tes.php & vtes.php
 28/4/2017
 ctrl Tesc.php & vtesc.php
 - tes mode coba (gk harus login)
+
+11/5/2017
+adib
+- vtes.php
