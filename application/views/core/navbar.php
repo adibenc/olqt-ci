@@ -4,12 +4,10 @@
   updates
   21/4/2017
     - bootstrap navbar
-  20/5/2017
-   - responsive
   */
 ?>
 <!-- navbar -->
-<nav class="col-md-12 navbar navbar-default" style="margin-bottom:50px;">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
 <?php
   if($this->session->userdata('username')&&$this->session->userdata('password')){

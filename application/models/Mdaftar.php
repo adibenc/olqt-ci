@@ -18,12 +18,20 @@ class Mdaftar extends CI_Model
   //   return $res;
   // }
 
-  function daftaruser($data)
-  {
-    $this->db->query("insert into user (username, password) values (?,md5(?))", array($data['username'],$data['password']));
+  function daftaruser($data){
+    $q = "insert into user (username,password,namalengkap,email) values (?,md5(?),?,?)";
+    $query = $this->db->query($q, array($data['username'],$data['password'],$data['namalengkap'],$data['email']));
 
+    return $query;
+    // menghapus variabel dari memory
+		unset($data);
+  }
+  function cekuser($data){
+    $q = "select username from user where username=?";
+    $query = $this->db->query($q, array($data['username']));
 
-		// menghapus variabel dari memory
+    return $query;
+    // menghapus variabel dari memory
 		unset($data);
   }
 }

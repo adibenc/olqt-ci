@@ -14,6 +14,35 @@ class Soal {
     private $arrsoal;//array
     private $urutansoal=0;//array
 
+    //ketentuan
+    private $surat;
+    private $surat2;
+    private $ayat;
+    private $ayat2;
+
+    public function setKetentuan($surat,$surat2,$ayat,$ayat2){//all integer
+      $this->surat =$surat;
+      $this->surat2=$surat2;
+      $this->ayat =$ayat;
+      $this->ayat2=$ayat2;
+    }
+
+    public function setSurat($surat){//integer
+      $this->surat=$surat;
+    }
+    public function getSurat(){//integer
+      return $this->surat;
+    }
+    public function getSurat2(){//integer
+      return $this->surat2;
+    }
+    public function getAyat(){//integer
+      return $this->ayat;
+    }
+    public function getAyat2(){//integer
+      return $this->ayat2;
+    }
+//end ketentuan
     public function getIdsoal() {
         return $this->idsoal;
     }
