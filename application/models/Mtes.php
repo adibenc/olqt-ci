@@ -35,7 +35,8 @@ class Mtes extends CI_Model{
   }
   function loadayat($surat,$surat2){
     // $q = "select distinct verseid from quran where juz>=".$juz." and juz<=".$juz2." and suraid>=".$surat." and suraid<=".$surat2;
-    $q = "select distinct verseid from quran where suraid>=".$surat." and suraid<=".$surat2;
+    // $q = "select distinct verseid from quran where suraid>=".$surat." and suraid<=".$surat2;
+    $q = "select distinct verseid from quran where suraid=".$surat;
     $query = $this->db->query($q);
     return $query;
     $query = null;
@@ -48,6 +49,16 @@ class Mtes extends CI_Model{
     $query = null;
   }
 
+  function pilihid($surat,$ayat = null){// pilih id ayat dari surat
+    $q = "select id from quran where suraid=".$surat;
+    if($ayat==null){
+    }else{
+      $q.=" and verseid=".$ayat;
+    }
+    $query = $this->db->query($q);
+    return $query;
+    $query = null;
+  }
   function tes_coba($nosoal){
     $mainq = "SELECT s.idsoal,s.soal,o.ayat as a1,o2.ayat as a2,o3.ayat as a3,o4.ayat as a4,s.opsia,s.opsib,s.opsic,s.opsid,j.idopsi
     from soal s inner join quran o on s.opsia = o.ID

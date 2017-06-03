@@ -6,7 +6,6 @@
 */
 
   class Tesc extends CI_Controller{
-
     public function __construct(){
       parent::__construct();
       $this->load->model('mtes');
@@ -59,9 +58,11 @@
         $arrsoal;
         for ($i=1; $i <= $jml; $i++){// ke soal
           $j=$i+rand(6100,6200);
+          // $j=$i+6100;
           $arrsoal [$i]= $this->mtes->tes_coba($j)->row();
           // $this->soal->setArrsoal($this->mtes->tes_coba($j)->row())[$i];
         }
+        // shuffle($arrsoal);
         $this->soal->setArrsoal($arrsoal);
         $data['jsoal'] = $jml;
         $data['ds'] = $this->soal->getArrsoal($nosoal);

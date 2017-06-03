@@ -11,7 +11,10 @@
       $this->load->model('mtes');
       $this->load->library('skor');
       $this->load->library('soal');
+      //initialize the test 
       $this->skor->setJumlahsoal(get_cookie('jsoal'));
+      $this->soal->setKetentuan(get_cookie('surat'),get_cookie('surat2')
+      ,get_cookie('ayat'),get_cookie('ayat2'));
     }
     public function index(){
       include ('cek.php'); //cek apakah sudah login
@@ -72,17 +75,17 @@
         // $juz = $this->input->post('juz');
         // $juz2 = $this->input->post('juz2');
         $surat = $this->input->post('surat');
-        $surat2 = $this->input->post('surat2');
+        // $surat2 = $this->input->post('surat2');
         // $juz = "<option>-Juz-</option>";
-        foreach ($this->mtes->loadayat($surat,$surat2)->result() as $r){
+        foreach ($this->mtes->loadayat($surat)->result() as $r){
           echo "<option value='".$r->verseid."'>".$r->verseid."</option>";
         }
         // $data['loadjuz2']=$juz;
       }
-      if($this->input->post('ayat')){
+      if($this->input->post('ayat')&&!$this->input->post('ayat2')){
         // $juz = $this->input->post('juz');
         // $juz2 = $this->input->post('juz2');
-        $surat = $this->input->post('surat');
+        // $surat = $this->input->post('surat');
         $surat2 = $this->input->post('surat2');//ambil combo box kedua
         // $juz = "<option>-Juz-</option>";
         foreach ($this->mtes->loadayat2($surat2)->result() as $r){
@@ -125,17 +128,26 @@
       // $this->skor->setJumlahsoal(get_cookie('jsoal'));
       $jml = $this->skor->getJumlahsoal();
       $surat = $this->soal->getSurat();
-      $surat = 3;
+      $surat2 = $this->soal->getSurat2();
+      $ayat = $this->soal->getAyat();
+      $ayat2 = $this->soal->getAyat2();
+      $idsoal = $this->mtes->pilihid($surat,$ayat)->row()->id;
+      $idsoal2 = $this->mtes->pilihid($surat2,$ayat2)->row()->id;
       $arrsoal;
 
       for ($i=1; $i <= $jml; $i++){// ke soal
-        $j=$i;
-        $arrsoal [$i]= $this->mtes->tes($surat)->row();
+        if($idsoal2>6220){
+          $j=rand($idsoal,$idsoal2-$jml);//faktor soal
+        }else{
+          $j=rand($idsoal,$idsoal2+$jml);//faktor soal
+        }
+        $arrsoal [$i]= $this->mtes->tes_coba($j)->row();
         // $this->soal->setArrsoal($this->mtes->tes_coba($j)->row())[$i];
       }
       // shuffle($arrsoal);
       $this->soal->setArrsoal($arrsoal);
       $data['jsoal'] = $jml;
+      $data['surat'] = $surat;
       $data['ds'] = $this->soal->getArrsoal($nosoal);
 
       $this->viewtc($data);
@@ -174,17 +186,16 @@
       if($nosoal==1){
         $surat = $this->input->post('surat');
         $surat2 = $this->input->post('surat2');
-        // $ayat = $this->input->post('ayat');
-        // $ayat2 = $this->input->post('ayat2');
-        $surat=3;
-        $surat2=3;
-        $ayat = 1;
-        $ayat2 = 10;
+        $ayat = $this->input->post('ayat');
+        $ayat2 = $this->input->post('ayat2');
         $jml = $this->input->post('jsoal');
-
         $this->skor->setJumlahsoal($jml);
-        $this->soal->setKetentuan($surat,$surat2,$ayat,$ayat2);
-        $this->soal->setSurat($surat);
+        set_cookie('surat',$surat,'999');
+        set_cookie('surat2',$surat2,'999');
+        set_cookie('ayat',$ayat,'999');
+        set_cookie('ayat2',$ayat2,'999');
+        // $this->soal->setKetentuan($surat,$surat2,$ayat,$ayat2);
+        // $this->soal->setSurat($surat);
       }else{
         $jml = $this->skor->getJumlahsoal();
       }

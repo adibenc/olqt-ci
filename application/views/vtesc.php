@@ -20,18 +20,17 @@ if($page=='Coba Tes'){
   </div>
   <div class="col-sm-6 col-md-6 col-lg-6 col-lg-offset-3" id="jawab">
     <script async type="text/javascript">
-      var soal;
       $(document).ready(function(){
-        $("#btopsi").click(function(){
+        $("#o1").click(function(){
           $("#jawaban").val($("#o1").val());
         });
-        $("#btopsi2").click(function(){
+        $("#o2").click(function(){
           $("#jawaban").val($("#o2").val());
         });
-        $("#btopsi3").click(function(){
+        $("#o3").click(function(){
           $("#jawaban").val($("#o3").val());
         });
-        $("#btopsi4").click(function(){
+        $("#o4").click(function(){
           $("#jawaban").val($("#o4").val());
         });
         $("#submitnext").click(function(){
@@ -42,15 +41,18 @@ if($page=='Coba Tes'){
     <?php //$urutan+=1;
     //echo form_open('tesc/mulai/'.$urutan);
     echo form_open('tesc/next/'.++$urutan); ?>
-      <input class="btn btn-block w3-xlarge" id="btopsi" type="button" name="idopsi" value="<?php echo $ds->a1;?>">
-      <input class="btn btn-block w3-xlarge" id="btopsi2" type="button" name="idopsi" value="<?php echo $ds->a2;?>">
-      <input class="btn btn-block w3-xlarge" id="btopsi3" type="button" name="idopsi" value="<?php echo $ds->a3;?>">
-      <input class="btn btn-block w3-xlarge" id="btopsi4" type="button" name="idopsi" value="<?php echo $ds->a4;?>">
-      <input id="o1" type="hidden" name="idopsi" value="<?php echo $ds->opsia;?>">
-      <input id="o2" type="hidden" name="idopsi" value="<?php echo $ds->opsib;?>">
-      <input id="o3" type="hidden" name="idopsi" value="<?php echo $ds->opsic;?>">
-      <input id="o4" type="hidden" name="idopsi" value="<?php echo $ds->opsid;?>">
-      <input id="o4" type="hidden" id="submitnext" name="idopsi" value="pluss">
+    <?php
+    $opsijawab = array(
+      "<button id='o1' type='button' class='btn btn-block w3-xlarge' name='button' value='".$ds->opsia."' style='white-space:normal;'>$ds->a1</button>",
+      "<button id='o2' type='button' class='btn btn-block w3-xlarge' name='button' value='".$ds->opsib."' style='white-space:normal;'>$ds->a2</button>",
+      "<button id='o3' type='button' class='btn btn-block w3-xlarge' name='button' value='".$ds->opsic."' style='white-space:normal;'>$ds->a3</button>",
+      "<button id='o4' type='button' class='btn btn-block w3-xlarge' name='button' value='".$ds->opsid."' style='white-space:normal;'>$ds->a4</button>"
+    );
+    shuffle($opsijawab);//shuffle button
+    foreach ($opsijawab as $o) {
+      echo $o;
+    }
+     ?>
       <input type="button" id="submitnext" name="u" value="plus">
       <input type="hidden" id="urutan" name="urutan" value="0<?php echo $urutan;?>">
       <input type="hidden" name="idsoal" value="<?php echo $ds->idsoal;?>">

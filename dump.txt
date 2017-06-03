@@ -122,3 +122,31 @@ SELECT ayat,id+1,id+ceil(rand()*10),id+floor(rand()*10),id+ceil(rand()*10) FROM 
 
 SELECT * from quran where verseid>ceil(rand()*10) and suraid >2 and suraid <5 limit 10
 insert into soal SELECT id,ayat,id+1,id+ceil(rand()*10),id+floor(rand()*10),id+ceil(rand()*10) FROM `quran`
+
+shuffle jawaban
+--vtes.php--
+<!-- <input class="btn btn-block w3-xlarge" id="btopsi" type="button" name="idopsi" value="<?php //echo $ds->a1;?>">
+<input class="btn btn-block w3-xlarge" id="btopsi2" type="button" name="idopsi" value="<?php //echo $ds->a2;?>">
+<input class="btn btn-block w3-xlarge" id="btopsi3" type="button" name="idopsi" value="<?php //echo $ds->a3;?>">
+<input class="btn btn-block w3-xlarge" id="btopsi4" type="button" name="idopsi" value="<?php //echo $ds->a4;?>"> -->
+<!-- <input id="o12" type="hidden" name="idopsi" value="<?php //echo $ds->opsia;?>">
+<input id="o2" type="hidden" name="idopsi" value="<?php //echo $ds->opsib;?>">
+<input id="o3" type="hidden" name="idopsi" value="<?php //echo $ds->opsic;?>">
+<input id="o4" type="hidden" name="idopsi" value="<?php //echo $ds->opsid;?>"> -->
+<!-- unused -->
+<!-- <button id="o1" type="button" class="btn btn-block w3-xlarge" name="button" value="<?php //echo $ds->opsia;?>"><?php //echo $ds->a1;?></button>
+<button id="o2" type="button" class="btn btn-block w3-xlarge" name="button" value="<?php //echo $ds->opsib;?>"><?php //echo $ds->a2;?></button>
+<button id="o3" type="button" class="btn btn-block w3-xlarge" name="button" value="<?php //echo $ds->opsic;?>"><?php //echo $ds->a3;?></button>
+<button id="o4" type="button" class="btn btn-block w3-xlarge" name="button" value="<?php //echo $ds->opsid;?>"><?php //echo $ds->a4;?></button> -->
+
+<!-- <div class="row text-center">
+<div class="" id="soal">
+  <h2>Soal</h2>
+</div>
+<div class="col-sm-4 col-md-4 col-lg-4 col-lg-offset-4" id="jawab">
+  <input class="btn btn-block w3-xlarge" type="button" name="opsi1" value="opsi1">
+  <input class="btn btn-block w3-xlarge" type="button" name="opsi2" value="opsi2">
+  <input class="btn btn-block w3-xlarge" type="button" name="opsi3" value="opsi3">
+  <input class="btn btn-block w3-xlarge" type="button" name="opsi4" value="opsi4">
+</div>
+</div> -->
